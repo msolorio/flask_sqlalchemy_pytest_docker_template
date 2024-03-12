@@ -1,6 +1,6 @@
 import requests
 
-from allocation import config
+from app import config
 
 
 def test_app_running():

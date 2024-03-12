@@ -14,8 +14,11 @@ down:
 logs:
 	docker-compose logs app | tail -100
 
-test: up
-	docker-compose run --rm --no-deps --entrypoint=pytest app /tests/unit /tests/integration /tests/e2e
+test-unit: up
+	docker-compose run --rm --no-deps --entrypoint=pytest app /tests/unit
+
+test-integration: up
+	docker-compose run --rm --no-deps --entrypoint=pytest app /tests/integration
 
 test-e2e: up
 	docker-compose run --rm --no-deps --entrypoint=pytest app /tests/e2e
